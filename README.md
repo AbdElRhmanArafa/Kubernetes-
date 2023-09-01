@@ -8,29 +8,47 @@ Before you can start using Kubernetes, make sure you have Minikube installed. If
 
 To create a Redis Pod, use the appropriate `kubectl` command.
 
+```bash
+    kubectl run redis --image=redis
+    kubectl get pods
+```
+
 ## Task 3: Create an Nginx Pod
 
-Create an Nginx Pod using a Pod definition YAML file. Create a file named `nginx-pod.yaml` with the necessary content.
+Create an Nginx Pod using a Pod definition YAML file. Create a file named `nginx-pod.yaml` with the necessary content, image Name should be nginx123.
+
+```text
+This will raise error ImagePullBackOff.
+```
 
 ## Task 4: Check Nginx Pod Status
 
-To check the status of the Nginx Pod, use the `kubectl get pod` command.
+To check the status of the Nginx Pod, use the **kubectl get pod** command.
 
 ## Task 5: Change Nginx Pod Image
 
 Change the Nginx Pod image to "nginx" using the appropriate `kubectl` command.
 
+``` bash
+kubectl set image pod/nginx nginx=nginx
+kubectl edit pod nginx
+```
+
 ## Task 6: Count ReplicaSets
 
-To count how many ReplicaSets exist on the system, use the `kubectl get replicaset` command.
+To count how many ReplicaSets exist on the system, use the **kubectl get replicaset** command.
 
 ## Task 7: Create a ReplicaSet
 
 Create a ReplicaSet with the specified name, image, and replicas using a YAML definition file.
 
+``` bash
+Pod status will be  CrashLoopBackOff
+```
+
 ## Task 8: Scale ReplicaSet
 
-Scale the specified ReplicaSet to a certain number of PODs using the `kubectl scale` command.
+Scale the specified ReplicaSet to a certain number of PODs using the **kubectl scale replicaset replica-set-1 --replicas=5** command.
 
 ## Task 9: Check READY Pods in ReplicaSet
 
@@ -42,7 +60,7 @@ Delete one of the PODs in a ReplicaSet using the `kubectl delete pod` command an
 
 ## Task 11: Count Deployments and ReplicaSets
 
-To count how many Deployments and ReplicaSets exist on the system, use the `kubectl get deployment,replicaset` command.
+To count how many  ReplicaSets exist on the system, use the `kubectl get replicaset` command.
 
 ## Task 12: Create a Deployment
 
